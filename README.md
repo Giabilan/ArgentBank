@@ -30,13 +30,19 @@ mongo --version
 
 ```bash
 # Install dependencies
-npm install
+npm install 
+or
+yarn install
 
 # Start local dev server
-npm run dev:server
+npm run dev:server 
+or
+yarn run dev:server
 
 # Populate database with two users
-npm run populate-db
+npm run populate-db 
+or
+yarn run populate-db
 ```
 
 Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!

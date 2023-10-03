@@ -1,0 +1,22 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem;
+  gap: 20px;
+
+  .featureIcon {
+    width: 100px;
+    border: 10px solid #00bc77;
+    border-radius: 50%;
+    padding: 1rem;
+  }
+  .featureTitle {
+    margin: 0;
+    font-weight: bold;
+  }
+  .featureSubtitle {
+    text-align: center;
+    margin: 0;
+  }
+}

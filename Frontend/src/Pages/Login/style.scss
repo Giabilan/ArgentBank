@@ -1,0 +1,49 @@
+.login {
+  flex: 1;
+  background-color: #12002b;
+  display: flex;
+  align-items: center;
+
+  .loginForm {
+    margin: 0 auto 250px auto;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+    width: fit-content;
+    height: fit-content;
+    .signInIcon {
+      font-size: 1.2rem;
+    }
+    .loginFormTitle {
+      margin: 0;
+    }
+
+    .loginLabelInput {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+    }
+    .loginLabelInput > label {
+      font-weight: bold;
+    }
+    .loginLabelInput > input {
+      padding: 7px;
+      border: 1px solid #2c3e50;
+      border-radius: 2px;
+      font-size: 1.2rem;
+    }
+
+    .loginLabelInput > input:focus {
+      border: 1px solid black;
+    }
+
+    .inputRememberMe {
+      width: 100%;
+    }
+  }
+}
