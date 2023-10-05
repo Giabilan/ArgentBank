@@ -1,36 +1,31 @@
-import PropTypes from "prop-types";
-import Button from "../Form/Button";
-import "./index.scss";
+import Card from "./Card";
 
-function formatedNumber(number) {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
-
-const Account = ({ bankName, typeOfTrsc,numbersOfTrsc , accountAmount, accountDesc }) => {
+const AccountCard = () => {
   return (
-    <div className="account">
-      <div className="accountInfos">
-        <div className="accountTitle">
-          {bankName}
-          {typeOfTrsc}
-          (x{numbersOfTrsc})
-        </div>
-        <div className="accountAmount">${formatedNumber(accountAmount)}</div>
-        <div className="accountDesc">{accountDesc}</div>
-      </div>
-      <div className="viewsTransactionBtn">
-        <Button content="views transactions" />
-      </div>
+    <div className="accountContainer">
+      <Card
+        bankName="Argent Bank"
+        typeOfTrsc=" Checking "
+        numbersOfTrsc={8349}
+        accountAmount={2082790}
+        accountDesc="Available Balance"
+      />
+      <Card
+        bankName="Argent Bank"
+        typeOfTrsc=" Savings "
+        numbersOfTrsc={6712}
+        accountAmount={10928420}
+        accountDesc="Available Balance"
+      />
+      <Card
+        bankName="Argent Bank"
+        typeOfTrsc=" Credit Card "
+        numbersOfTrsc={8349}
+        accountAmount={184300}
+        accountDesc="Current Balance"
+      />
     </div>
   );
 };
 
-Account.propTypes = {
-  bankName: PropTypes.string.isRequired,
-  typeOfTrsc: PropTypes.string.isRequired,
-  numbersOfTrsc: PropTypes.number.isRequired,
-  accountAmount: PropTypes.number.isRequired,
-  accountDesc: PropTypes.string.isRequired,
-};
-
-export default Account;
+export default AccountCard;
