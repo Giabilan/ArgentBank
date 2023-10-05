@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Button from "../../../components/Form/Button";
+import Button from "../Form/Button";
 import "./index.scss";
 
 const Account = ({ accountTitle, accountAmount, accountDesc }) => {

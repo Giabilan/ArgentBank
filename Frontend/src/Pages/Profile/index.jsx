@@ -1,5 +1,5 @@
 import Button from "../../components/Form/Button";
-import Account from "../Profile/Account/index";
+import Account from "../../components/Account";
 import "./index.scss";
 
 const Profile = () => {
