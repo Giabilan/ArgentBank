@@ -9,8 +9,8 @@ const Header = () => {
         <img src={Logo} alt="Logo" />
       </Link>
       <nav>
-        <Navigation to="/sign-in" content="Sign In" icon="fa fa-user-circle" />
-        {/* nav log out à venir */}
+        <Navigation to="/login" content="Sign In" icon="fa fa-user-circle" />
+        <Navigation to="/" content="Sign out" icon="fa-solid fa-right-from-bracket" />
       </nav>
     </header>
   );

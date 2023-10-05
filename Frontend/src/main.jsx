@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./global.scss";
 
-import Layout from "./Layout/index.jsx";
-import Home from "./Pages/Home/index.jsx";
-import Login from "./Pages/Login/index.jsx";
+import Layout from "./Layout/index";
+import Home from "./Pages/Home/index";
+import Login from "./Pages/Login/index";
+import Profile from "./Pages/Profile/index";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +18,19 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/sign-in",
+    path: "/login",
     element: (
       <Layout>
         <Login />
+      </Layout>
+    ),
+  },
+  
+  {
+    path: "/profile",
+    element: (
+      <Layout>
+       <Profile/>
       </Layout>
     ),
   },
