@@ -11,18 +11,24 @@ const Profile = () => {
       <Button content="Edit Name" />
       <div className="accountContainer">
         <Account
-          accountTitle="Argent Bank Checking (x8349)"
-          accountAmount="2,082.79"
+          bankName="Argent Bank"
+          typeOfTrsc=" Checking "
+          numbersOfTrsc={8349}
+          accountAmount={2082790}
           accountDesc="Available Balance"
         />
         <Account
-          accountTitle="Argent Bank Savings (x6712)"
-          accountAmount="10,928.42"
+          bankName="Argent Bank"
+          typeOfTrsc=" Savings "
+          numbersOfTrsc={6712}
+          accountAmount={10928420}
           accountDesc="Available Balance"
         />
         <Account
-          accountTitle="Argent Bank Credit Card (x8349)"
-          accountAmount="184.30"
+          bankName="Argent Bank"
+          typeOfTrsc=" Credit Card "
+          numbersOfTrsc={8349}
+          accountAmount={184300}
           accountDesc="Current Balance"
         />
       </div>

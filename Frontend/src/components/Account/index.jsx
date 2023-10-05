@@ -2,12 +2,20 @@ import PropTypes from "prop-types";
 import Button from "../Form/Button";
 import "./index.scss";
 
-const Account = ({ accountTitle, accountAmount, accountDesc }) => {
+function formatedNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+const Account = ({ bankName, typeOfTrsc,numbersOfTrsc , accountAmount, accountDesc }) => {
   return (
     <div className="account">
       <div className="accountInfos">
-        <div className="accountTitle">{accountTitle}</div>
-        <div className="accountAmount">${accountAmount}</div>
+        <div className="accountTitle">
+          {bankName}
+          {typeOfTrsc}
+          (x{numbersOfTrsc})
+        </div>
+        <div className="accountAmount">${formatedNumber(accountAmount)}</div>
         <div className="accountDesc">{accountDesc}</div>
       </div>
       <div className="viewsTransactionBtn">
@@ -18,8 +26,10 @@ const Account = ({ accountTitle, accountAmount, accountDesc }) => {
 };
 
 Account.propTypes = {
-  accountTitle: PropTypes.string.isRequired,
-  accountAmount: PropTypes.string.isRequired,
+  bankName: PropTypes.string.isRequired,
+  typeOfTrsc: PropTypes.string.isRequired,
+  numbersOfTrsc: PropTypes.number.isRequired,
+  accountAmount: PropTypes.number.isRequired,
   accountDesc: PropTypes.string.isRequired,
 };
 
