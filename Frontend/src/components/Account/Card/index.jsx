@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Button from "../../Form/Button";
-import "./index.scss";
+import "./style.scss";
 
 function formatedNumber(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

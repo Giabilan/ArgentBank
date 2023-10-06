@@ -1,6 +1,6 @@
 import Button from "../../components/Form/Button";
 import AccountCard from "../../components/Account/index"
-import "./index.scss";
+import "./style.scss";
 
 const Profile = () => {
   return (

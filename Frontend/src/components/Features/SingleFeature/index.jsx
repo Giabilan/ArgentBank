@@ -7,6 +7,7 @@ const SingleFeature = ({ icon, title, subtitle }) => {
       <img
         className="featureIcon"
         src={`src/assets/featuresIcon/icon-${icon}.png`}
+        
         alt={`Image de ${icon}`}
       />
       <h3 className="featureTitle">{title}</h3>
@@ -16,9 +17,9 @@ const SingleFeature = ({ icon, title, subtitle }) => {
 };
 
 SingleFeature.propTypes = {
-  icon: PropTypes.node.isRequired,
-  title: PropTypes.node.isRequired,
-  subtitle: PropTypes.node.isRequired,
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
 };
 
 export default SingleFeature;
