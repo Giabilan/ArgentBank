@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import Button from "../../Form/Button";
+import Button from "../../Button"
 import "./style.scss";
 
 function formatedNumber(number) {
