@@ -1,7 +1,5 @@
 import "./style.scss";
 import Button from "../../components/Button";
-import TextInput from "../../components/Form/TextInput";
-import PaswordInput from "../../components/Form/PasswordInput";
 import CheckboxInput from "../../components/Form/CheckboxInput";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -15,13 +13,18 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleButtonCallback = async () => {
+  const handleLogin = async () => {
     try {
       const response = await loginAPI({ email, password });
       if (response.status === 200) {
         const userDatas = await getUserDatas(response.body.token);
         if (userDatas.status === 200) {
-          dispatch({type:"user/updateUser", payload: {userDatas: {...userDatas.body, token: response.body.token}}})
+          dispatch({
+            type: "user/updateUser",
+            payload: {
+              userDatas: { ...userDatas.body, token: response.body.token },
+            },
+          });
           navigate("/profile");
         } else {
           throw new Error(userDatas.message);
@@ -40,21 +43,33 @@ const Login = () => {
       <div className="loginForm">
         <i className="fa fa-user-circle signInIcon"></i>
         <h1 className="loginFormTitle">Sign In</h1>
-        <TextInput
-          handleCallback={(eventCallback) => {
-            setEmail(eventCallback.value);
-            setError("");
-          }}
-        />
-        <PaswordInput
-          handleCallback={(eventCallback) => {
-            setPassword(eventCallback.value);
-            setError("");
-          }}
-        />
+
+        <div className="loginLabelInput">
+          <label htmlFor="email">Username</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+        </div>
+        <div className="loginLabelInput">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="passsword"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+        </div>
         <CheckboxInput />
         {error && <div className="errorLogin">{error}</div>}
-        <Button content="Sign In" handleButtonCallback={handleButtonCallback} />
+        <Button content="Sign In" onClick={handleLogin} />
       </div>
     </div>
   );

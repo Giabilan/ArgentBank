@@ -6,8 +6,7 @@ import { useDispatch } from "react-redux";
 const Navigation = ({ content, icon, to, action }) => {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    console.log(action);
+  const handleClickLogout = () => {
     if (action === "logout") {
       dispatch({ type: "user/logout" });
     }
@@ -16,7 +15,7 @@ const Navigation = ({ content, icon, to, action }) => {
   return (
     <div className="navigation">
       <i className={icon}></i>
-      <Link onClick={handleClick} to={to}>{content}</Link>
+      <Link onClick={handleClickLogout} to={to}>{content}</Link>
     </div>
   );
 };

@@ -25,3 +25,18 @@ export const getUserDatas = async (token) => {
   });
   return response.json();
 };
+
+export const editUserName = async (token, data) => {
+  const response = await fetch(`${API_URL}/profile`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      userName: data.username,
+    }),
+  });
+  return response.json();
+};

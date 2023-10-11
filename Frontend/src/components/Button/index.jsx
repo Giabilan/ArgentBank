@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 
-const Button = ({ content, handleButtonCallback }) => (
-  <button onClick={handleButtonCallback}>{content}</button>
+const Button = ({ content, onClick }) => (
+  <button onClick={onClick}>{content}</button>
 );
 
 Button.propTypes = {
   content: PropTypes.string.isRequired,
-  handleButtonCallback: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 export default Button;

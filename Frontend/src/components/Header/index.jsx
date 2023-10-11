@@ -18,7 +18,7 @@ const Header = () => {
         ) : (
           <>
             <Navigation
-              to="/login"
+              to="/profile"
               content={user.userName}
               icon="fa fa-user-circle"
             />
