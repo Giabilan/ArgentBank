@@ -1,24 +1,20 @@
-import Button from "../../components/Button";
-import AccountCard from "../../components/Account/index";
 import "./style.scss";
+import AccountCard from "../../components/Account";
 import { useDispatch, useSelector } from "react-redux";
+import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 import { editUserName } from "../../API";
 
 const Profile = () => {
-  const user = useSelector((state) => state.user);
-  const [userCopy, setUserCopy] = useState({
-    username: "",
-  });
   const [isEditing, setIsEditing] = useState(false);
+  const user = useSelector((state) => state.user);
+  const [userCopy, setUserCopy] = useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setUserCopy({
-      username: user.userName,
-    });
+    setUserCopy({ username: user.userName });
   }, [user]);
 
-  const dispatch = useDispatch();
   const handleEdit = async () => {
     const response = await editUserName(user.token, userCopy);
     if (response.status === 200) {
@@ -38,21 +34,21 @@ const Profile = () => {
             <label htmlFor="username">Username :</label>
             <input
               type="text"
-              value={userCopy.username}
-              onChange={(event) =>
-                setUserCopy({ ...userCopy, username: event.target.value })
-              }
               name="username"
               id="username"
+              value={userCopy.username}
+              onChange={(event) =>
+                setUserCopy({ username: event.target.value })
+              }
             />
           </div>
           <div className="inputLabelContainer">
             <label htmlFor="firstname">Firstname :</label>
             <input
               type="text"
-              value={user.firstName}
               name="firstname"
               id="firstname"
+              value={user.firstName}
               disabled
             />
           </div>
@@ -60,9 +56,9 @@ const Profile = () => {
             <label htmlFor="lastname">Lastname :</label>
             <input
               type="text"
-              value={user.lastName}
               name="lastname"
               id="lastname"
+              value={user.lastName}
               disabled
             />
           </div>
@@ -74,8 +70,7 @@ const Profile = () => {
       ) : (
         <>
           <h1 className="profileTitle">
-            Welcome back <br></br>
-            {user.firstName} {user.lastName} !
+            Welcome back <br></br> {user.firstName} {user.lastName} !
           </h1>
           <Button content="Edit Name" onClick={() => setIsEditing(true)} />
         </>
