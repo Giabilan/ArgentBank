@@ -33,37 +33,19 @@ const Profile = () => {
         <>
           <h1 className="profileTitle">Edit user info</h1>
           <form className="formContainer" onSubmit={handleEdit}>
-            <div className="LabelInputContainer">
+            <div className="profileLabelInputContainer">
               <label htmlFor="username">User name :</label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                value={userCopy.username}
-                onChange={(event) =>
-                  setUserCopy({ username: event.target.value })
-                }
+              <input type="text" name="username" id="username" value={userCopy.username}
+                onChange={(event) => setUserCopy({ username: event.target.value })}
               />
             </div>
-            <div className="LabelInputContainer">
+            <div className="profileLabelInputContainer">
               <label htmlFor="firstname">First name :</label>
-              <input
-                type="text"
-                name="firstname"
-                id="firstname"
-                value={user.firstName}
-                disabled
-              />
+              <input type="text" name="firstname" id="firstname" value={user.firstName} disabled />
             </div>
-            <div className="LabelInputContainer">
+            <div className="profileLabelInputContainer">
               <label htmlFor="lastname">Last name :</label>
-              <input
-                type="text"
-                name="lastname"
-                id="lastname"
-                value={user.lastName}
-                disabled
-              />
+              <input type="text" name="lastname" id="lastname" value={user.lastName} disabled />
             </div>
             <div className="editButtonContainer">
               <Button type="submit" content="Save" />
