@@ -24,7 +24,7 @@ const Header = () => {
             />
 
             <Navigation
-              to="/login"
+              to="/"
               content="Sign out"
               icon="fa-solid fa-right-from-bracket"
               action="logout"
