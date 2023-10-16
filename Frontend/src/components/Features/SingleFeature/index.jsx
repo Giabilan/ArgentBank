@@ -7,7 +7,6 @@ const SingleFeature = ({ icon, title, subtitle }) => {
       <img
         className="featureIcon"
         src={`src/assets/featuresIcon/icon-${icon}.png`}
-        
         alt={`Image de ${icon}`}
       />
       <h3 className="featureTitle">{title}</h3>

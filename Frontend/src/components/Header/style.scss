@@ -3,15 +3,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
-
   .logo {
     width: 200px;
-
     img {
       width: 100%;
     }
   }
-
   nav {
     display: flex;
     flex-direction: row;
@@ -29,7 +26,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
-
     .logo {
       width: 150px;
     }

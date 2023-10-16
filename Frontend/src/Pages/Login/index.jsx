@@ -15,14 +15,16 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     try {
-      e.preventDefault()
+      e.preventDefault();
       const response = await loginAPI({ email, password });
       if (response.status === 200) {
         const userDatas = await getUserDatas(response.body.token);
         if (userDatas.status === 200) {
           dispatch({
             type: "user/updateUser",
-            payload: {userDatas: { ...userDatas.body, token: response.body.token },},
+            payload: {
+              userDatas: { ...userDatas.body, token: response.body.token },
+            },
           });
           navigate("/profile");
         } else {
@@ -43,11 +45,15 @@ const Login = () => {
         <h1 className="loginFormTitle">Sign In</h1>
         <div className="loginLabelInputContainer">
           <label htmlFor="email">Username</label>
-          <input type="email" name="email" id="email" onChange={(event) => setEmail(event.target.value)} />
+          <input type="email" name="email" id="email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </div>
         <div className="loginLabelInputContainer">
           <label htmlFor="password">Password</label>
-          <input type="password" name="passsword" onChange={(event) => setPassword(event.target.value)} />
+          <input type="password" name="passsword" id="password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
         </div>
         <CheckboxInput />
         {error && <div className="errorLogin">{error}</div>}

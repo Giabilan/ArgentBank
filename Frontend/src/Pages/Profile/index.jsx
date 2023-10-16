@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 import { editUserName } from "../../API";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const user = useSelector((state) => state.user);
   const [userCopy, setUserCopy] = useState({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setUserCopy({ username: user.userName });
@@ -26,6 +28,12 @@ const Profile = () => {
       setIsEditing(false);
     }
   };
+
+  useEffect(() => {
+    if (!user.token) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
 
   return (
     <div className="profileContainer">

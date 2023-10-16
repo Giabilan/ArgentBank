@@ -1,18 +1,6 @@
 import Card from "./Card";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const AccountCard = () => {
-  const user = useSelector((state) => state.user);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user.token) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
-
   return (
     <div className="accountContainer">
       <Card
